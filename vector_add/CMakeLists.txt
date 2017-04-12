@@ -7,6 +7,7 @@ set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-O2
 -gencode arch=compute_30,code=sm_30 
 -gencode arch=compute_35,code=sm_35 
 -gencode arch=compute_50,code=sm_50 
+-gencode arch=compute_52,code=sm_52 
 )
 
 # indicate include dir
@@ -78,3 +79,6 @@ target_link_libraries(
 vectorAdd_bs1024
 -lcudart
 ) 
+
+
+
