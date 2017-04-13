@@ -1,0 +1,9 @@
+==10528== NVPROF is profiling process 10528, command: ./vectorAdd_bs1024
+==10528== Profiling application: ./vectorAdd_bs1024
+==10528== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,B,KB,GB/s,,,,
+514.105592,33.632000,,,,,,,,,,195.312500,5.538312,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+514.175704,33.632000,,,,,,,,,,195.312500,5.538312,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+514.213944,5.024000,49,1,1,1024,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","7","vectorAdd(float const *, float const *, float*, int) [208]"
+514.220568,33.057000,,,,,,,,,,195.312500,5.634647,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
