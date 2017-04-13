@@ -1,0 +1,9 @@
+==1169== NVPROF is profiling process 1169, command: ./vectorAdd_bs32
+==1169== Profiling application: ./vectorAdd_bs32
+==1169== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,B,KB,GB/s,,,,
+778.734859,34.048000,,,,,,,,,,195.312500,5.470645,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+778.798219,33.568000,,,,,,,,,,195.312500,5.548871,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+778.836395,8.032000,1563,1,1,32,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","7","vectorAdd(float const *, float const *, float*, int) [208]"
+778.846059,33.056000,,,,,,,,,,195.312500,5.634817,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
