@@ -2,7 +2,7 @@
 
 cd ss1024 && make clean && make 
 nvprof --print-gpu-trace --csv ./mergeSort 2> trace1024.csv
-nvprof --metrics all     --csv ./mergeSort 2> metrics2014.csv 
+nvprof --metrics all     --csv ./mergeSort 2> metrics1024.csv 
 mv *.csv ../  && cd ../
 
 cd ss512 && make clean && make 
