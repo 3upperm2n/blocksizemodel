@@ -1,0 +1,10 @@
+==17582== NVPROF is profiling process 17582, command: ./mm4
+==17582== Profiling application: ./mm4
+==17582== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,B,B,KB,GB/s,,,,
+568.286897,0.067137,,,,,,,,,,400.000000,5.681960,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+568.454418,0.131553,,,,,,,,,,800.000000,5.799484,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+568.591155,2.111436,160,80,1,4,4,1,26,128,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=4>(float*, float*, float*, int, int) [209]"
+570.725087,2.119372,160,80,1,4,4,1,26,128,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=4>(float*, float*, float*, int, int) [220]"
+572.870284,0.130112,,,,,,,,,,800.000000,5.863713,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
