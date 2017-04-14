@@ -22,7 +22,7 @@ def Trace2dataframe(trace_file):
     
     df_trace = pd.read_csv(trace_file, names=TraceCols, engine='python')         
     
-    ows_to_skip = 0                                                            
+    rows_to_skip = 0                                                            
     # find out the number of rows to skip                                       
     for index, row in df_trace.iterrows():
         if row['Start'] == 'Start':                                             
@@ -40,16 +40,19 @@ def GetKernel(df_trace):
     for rowID in xrange(1, df_trace.shape[0]):
         df_row = df_trace.iloc[[rowID]]
         api_name = df_row['Name'].to_string()
-        if "DtoH" in api_name or "HtoD" in api_name:
+        if "DtoH" in api_name or "HtoD" in api_name or \
+        "memset" in api_name or "__nv_static" in api_name:
             drop_rows.append(rowID)
     df.drop(df.index[drop_rows], inplace=True)
     return df
 
 
 def Metrics2dataframe(metrics_file):
+    #print metrics_file
+
     df_trace = pd.read_csv(metrics_file, names=MetricsCols, engine='python')         
     
-    ows_to_skip = 0                                                            
+    rows_to_skip = 0                                                            
     # find out the number of rows to skip                                       
     for index, row in df_trace.iterrows():
         if row['Device'] == 'Device':                                             
@@ -142,7 +145,7 @@ def GenCurKernInfo(df_trace, df_metrics, target_kern, out_columns):
 
     target_kern = target_kern.lower()
     #print target_kern
-    
+
     #
     # find the target kernel trace 
     # If there the kernel are repeated, it will get the info from the last occurrence
@@ -227,3 +230,19 @@ def Prep_trace_metrics(trace_file, metrics_file):
     df_kernel_trace = GetKernel(df_trace) # read kernel trace
     df_metrics = Metrics2dataframe(metrics_file) # read metrics
     return df_kernel_trace, df_metrics
+
+
+def Groupbyname(df_kern, target_kern_name_list, out_columns):
+    df = pd.DataFrame(columns=out_columns)
+
+    for kern in target_kern_name_list:
+        mykern = kern.lower()
+        
+        for index, row in df_kern.iterrows():
+            kern_name = row.kern_name.lower()
+            if mykern in kern_name:
+                # append current row
+                df.loc[len(df)] = row
+
+    return df
+
