@@ -10,7 +10,7 @@ nvprof --print-gpu-trace --csv ./vectorAdd_bs128  2> trace128.csv
 nvprof --metrics all --csv ./vectorAdd_bs128  2> metrics128.csv
 
 nvprof --print-gpu-trace --csv ./vectorAdd_bs256  2> trace256.csv
-nvprof --metrics all --csv ./vectorAdd_bs256  2> bs256.csv
+nvprof --metrics all --csv ./vectorAdd_bs256  2> metrics256.csv
 
 nvprof --print-gpu-trace --csv ./vectorAdd_bs512 2> trace512.csv
 nvprof --metrics all --csv ./vectorAdd_bs512 2> metrics512.csv
