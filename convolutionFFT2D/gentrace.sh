@@ -1,8 +1,36 @@
 #!/bin/bash
 
-cd bs1024 && make && nvprof --metrics all --csv ./convolutionFFT2D 2> bs1024.csv && mv bs1024.csv ../  && cd ../
-cd bs512 && make && nvprof --metrics all --csv ./convolutionFFT2D 2> bs512.csv && mv bs512.csv ../  && cd ../
-cd bs256 && make && nvprof --metrics all --csv ./convolutionFFT2D 2> bs256.csv && mv bs256.csv ../  && cd ../
-cd bs128 && make && nvprof --metrics all --csv ./convolutionFFT2D 2> bs128.csv && mv bs128.csv ../  && cd ../
-cd bs64 && make && nvprof --metrics all --csv ./convolutionFFT2D 2> bs64.csv && mv bs64.csv ../  && cd ../
-cd bs32 && make && nvprof --metrics all --csv ./convolutionFFT2D 2> bs32.csv && mv bs32.csv ../  && cd ../
+cd bs1024 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace1024.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics1024.csv 
+mv *.csv ../  && cd ../
+
+cd bs512 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace512.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics512.csv 
+mv *.csv ../  && cd ../
+
+cd bs256 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace256.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics256.csv 
+mv *.csv ../  && cd ../
+
+cd bs128 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace128.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics128.csv 
+mv *.csv ../  && cd ../
+
+cd bs64 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace64.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics64.csv 
+mv *.csv ../  && cd ../
+
+cd bs32 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace32.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics32.csv 
+mv *.csv ../  && cd ../
+
+cd bs16 && make clean && make 
+nvprof --print-gpu-trace --csv ./convolutionFFT2D 2> trace16.csv
+nvprof --metrics all --csv ./convolutionFFT2D 2> metrics16.csv 
+mv *.csv ../  && cd ../
