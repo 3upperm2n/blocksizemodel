@@ -141,22 +141,28 @@ def GenCurKernInfo(df_trace, df_metrics, target_kern, out_columns):
     ssm_coef, dsm_coef = sm_coef_bytes(df_trace)
 
     target_kern = target_kern.lower()
-
+    #print target_kern
+    
     #
     # find the target kernel trace 
     # If there the kernel are repeated, it will get the info from the last occurrence
     #print df_trace.shape
+    kern_found = False
     for index, row in df_trace.iterrows():
         # skip the 1st row
         if index > 0:
             kern_name = row.Name.lower()
-
+            #print kern_name
             if target_kern in kern_name:
                 # found kernel 
+                #print kern_name
+                kern_found = True
                 duration, gridx, gridy, gridz, blkx, blky, blkz, reg, smem = \
                 read_row_kernel(row, duration_coef, ssm_coef, dsm_coef)
-            else:
-                sys.stderr.write('Kernel not found!')
+    
+    if not kern_found:
+        sys.stderr.write('Kernel not found!')
+
     #
     # fill in column val
     #
