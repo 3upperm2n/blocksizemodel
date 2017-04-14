@@ -1,19 +1,19 @@
-==17627== NVPROF is profiling process 17627, command: ./mm8
-==17627== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
-==17627== Profiling application: ./mm8
-==17627== Profiling result:
-==17627== Metric result:
+==21554== NVPROF is profiling process 21554, command: ./mm8
+==21554== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==21554== Profiling application: ./mm8
+==21554== Profiling result:
+==21554== Metric result:
 "Device","Kernel","Invocations","Metric Name","Metric Description","Min","Max","Avg"
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sm_efficiency","Multiprocessor Activity",99.304001%,99.397862%,99.350932%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"achieved_occupancy","Achieved Occupancy",0.977276,0.977891,0.977583
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"ipc","Executed IPC",2.357298,2.357556,2.357427
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"issued_ipc","Issued IPC",2.355078,2.357542,2.356310
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sm_efficiency","Multiprocessor Activity",99.347324%,99.415924%,99.381624%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"achieved_occupancy","Achieved Occupancy",0.976364,0.977661,0.977012
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"ipc","Executed IPC",2.357386,2.357865,2.357625
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"issued_ipc","Issued IPC",2.354280,2.356384,2.355332
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_per_warp","Instructions per warp",1562.000000,1562.000000,1562.000000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"branch_efficiency","Branch Efficiency",100.000000%,100.000000%,100.000000%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"warp_execution_efficiency","Warp Execution Efficiency",100.000000%,100.000000%,100.000000%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"warp_nonpred_execution_efficiency","Warp Non-Predicated Execution Efficiency",99.871959%,99.871959%,99.871959%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_replay_overhead","Instruction Replay Overhead",0.000115,0.000115,0.000115
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"issue_slot_utilization","Issue Slot Utilization",48.133325%,48.183467%,48.158396%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"issue_slot_utilization","Issue Slot Utilization",48.117015%,48.159800%,48.138408%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_load_transactions_per_request","Shared Memory Load Transactions Per Request",1.200000,1.200000,1.200000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_store_transactions_per_request","Shared Memory Store Transactions Per Request",1.000000,1.000000,1.000000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"local_load_transactions_per_request","Local Memory Load Transactions Per Request",0.000000,0.000000,0.000000
@@ -26,21 +26,21 @@
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"local_store_transactions","Local Store Transactions",0,0,0
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gld_transactions","Global Load Transactions",4096000,4096000,4096000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gst_transactions","Global Store Transactions",51200,51200,51200
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_read_transactions","Device Memory Read Transactions",38331,38335,38333
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_write_transactions","Device Memory Write Transactions",38403,38433,38418
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_read_transactions","Device Memory Read Transactions",38267,38343,38305
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_write_transactions","Device Memory Write Transactions",38451,38493,38472
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"global_hit_rate","Global Hit Rate",50.000000%,50.000000%,50.000000%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"local_hit_rate","Local Hit Rate",0.000000%,0.000000%,0.000000%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gld_requested_throughput","Requested Global Load Throughput",125.168739GB/s,125.186967GB/s,125.176273GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gst_requested_throughput","Requested Global Store Throughput",1.564609GB/s,1.564837GB/s,1.563691GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gld_throughput","Global Load Throughput",125.168739GB/s,125.186967GB/s,125.176273GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gst_throughput","Global Store Throughput",3.129218GB/s,3.129674GB/s,3.128313GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_read_throughput","Device Memory Read Throughput",2.342941GB/s,2.343038GB/s,2.342276GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_write_throughput","Device Memory Write Throughput",2.347097GB/s,2.349273GB/s,2.346933GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"tex_cache_throughput","Unified Cache Throughput",125.168739GB/s,125.186967GB/s,125.176273GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gld_requested_throughput","Requested Global Load Throughput",125.183116GB/s,125.228063GB/s,125.204213GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gst_requested_throughput","Requested Global Store Throughput",1.564789GB/s,1.565351GB/s,1.564622GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gld_throughput","Global Load Throughput",125.183116GB/s,125.228063GB/s,125.204213GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gst_throughput","Global Store Throughput",3.129578GB/s,3.130702GB/s,3.129244GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_read_throughput","Device Memory Read Throughput",2.339894GB/s,2.343699GB/s,2.341345GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_write_throughput","Device Memory Write Throughput",2.350301GB/s,2.353713GB/s,2.350658GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"tex_cache_throughput","Unified Cache Throughput",125.183116GB/s,125.228063GB/s,125.204213GB/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"local_load_throughput","Local Memory Load Throughput",0.000000B/s,0.000000B/s,0.000000B/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"local_store_throughput","Local Memory Store Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_load_throughput","Shared Memory Load Throughput",751.012437GB/s,751.121803GB/s,751.066022GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_store_throughput","Shared Memory Store Throughput",125.168739GB/s,125.186967GB/s,125.176273GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_load_throughput","Shared Memory Load Throughput",751.098695GB/s,751.368380GB/s,751.232728GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_store_throughput","Shared Memory Store Throughput",125.183116GB/s,125.228063GB/s,125.204213GB/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gld_efficiency","Global Memory Load Efficiency",100.000000%,100.000000%,100.000000%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"gst_efficiency","Global Memory Store Efficiency",50.000000%,50.000000%,50.000000%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"tex_cache_transactions","Unified Cache Transactions",2048000,2048000,2048000
@@ -60,7 +60,7 @@
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"flop_count_sp_mul","Floating Point Operation(Single Precision Mul)",0,0,0
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"flop_count_sp_special","Floating Point Operations(Single Precision Special)",0,0,0
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_executed","Instructions Executed",9996800,9996800,9996800
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_issued","Instructions Issued",9997952,9997952,9997952
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_issued","Instructions Issued",9997734,9997952,9997843
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"dram_utilization","Device Memory Utilization","Low (1)","Low (1)","Low (1)"
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"tex_utilization","Unified Cache Utilization","Low (3)","Low (3)","Low (3)"
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"shared_efficiency","Shared Memory Efficiency",128.571429%,128.571429%,128.571429%
@@ -73,40 +73,40 @@
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_compute_ld_st","Load/Store Instructions",114892800,114892800,114892800
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_misc","Misc Instructions",18432000,18432000,18432000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"inst_inter_thread_communication","Inter-Thread Instructions",0,0,0
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"issue_slots","Issue Slots",8173568,8173568,8173568
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"issue_slots","Issue Slots",8173350,8173568,8173459
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"cf_issued","Issued Control-Flow Instructions",268800,268800,268800
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"cf_executed","Executed Control-Flow Instructions",268800,268800,268800
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"ldst_issued","Issued Load/Store Instructions",5683200,5683200,5683200
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"ldst_executed","Executed Load/Store Instructions",4128000,4128000,4128000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"atomic_transactions","Atomic Transactions",0,0,0
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"atomic_transactions_per_request","Atomic Transactions Per Request",0.000000,0.000000,0.000000
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",4.338400%,4.344195%,4.341297%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",32.353881%,32.469611%,32.411746%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_memory_dependency","Issue Stall Reasons (Data Request)",25.248104%,25.278279%,25.263191%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_inst_fetch","Issue Stall Reasons (Instructions Fetch)",4.342871%,4.342913%,4.342892%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_exec_dependency","Issue Stall Reasons (Execution Dependency)",32.271488%,32.326780%,32.299134%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_memory_dependency","Issue Stall Reasons (Data Request)",25.391950%,25.403031%,25.397490%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_texture","Issue Stall Reasons (Texture)",0.000000%,0.000000%,0.000000%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_sync","Issue Stall Reasons (Synchronization)",23.895258%,23.905479%,23.900369%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_other","Issue Stall Reasons (Other)",12.296018%,12.387043%,12.341531%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",0.043739%,0.044226%,0.043982%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",0.375550%,0.378575%,0.377062%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",0.080113%,0.084773%,0.082443%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_not_selected","Issue Stall Reasons (Not Selected)",1.237517%,1.239241%,1.238379%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_sync","Issue Stall Reasons (Synchronization)",23.873729%,23.980925%,23.927327%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_other","Issue Stall Reasons (Other)",12.249712%,12.313701%,12.281707%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_constant_memory_dependency","Issue Stall Reasons (Immediate constant)",0.067007%,0.067750%,0.067378%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_pipe_busy","Issue Stall Reasons (Pipe Busy)",0.373326%,0.376869%,0.375097%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_memory_throttle","Issue Stall Reasons (Memory Throttle)",0.083402%,0.084195%,0.083799%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"stall_not_selected","Issue Stall Reasons (Not Selected)",1.223117%,1.227234%,1.225176%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_read_transactions","System Memory Read Transactions",0,0,0
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_write_transactions","System Memory Write Transactions",5,5,5
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_read_transactions","L2 Read Transactions",2048039,2048128,2048083
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_read_transactions","L2 Read Transactions",2048039,2048119,2048079
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_write_transactions","L2 Write Transactions",51206,51206,51206
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"ecc_transactions","ECC Transactions",0,0,0
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"local_memory_overhead","Local Memory Overhead",0.000000%,0.000000%,0.000000%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"tex_cache_hit_rate","Unified Cache Hit Rate",49.382716%,49.382716%,49.382716%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_read_hit_rate","L2 Hit Rate (Texture Reads)",98.128711%,98.130859%,98.129785%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_read_hit_rate","L2 Hit Rate (Texture Reads)",98.129883%,98.130469%,98.130176%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_write_hit_rate","L2 Hit Rate (Texture Writes)",87.500000%,87.500000%,87.500000%
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_read_throughput","L2 Throughput (Texture Reads)",125.168739GB/s,125.186967GB/s,125.176273GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_write_throughput","L2 Throughput (Texture Writes)",3.129218GB/s,3.129674GB/s,3.128313GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_read_throughput","L2 Throughput (Texture Reads)",125.183116GB/s,125.228063GB/s,125.204213GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_write_throughput","L2 Throughput (Texture Writes)",3.129578GB/s,3.130702GB/s,3.129244GB/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_read_transactions","L2 Transactions (Texture Reads)",2048000,2048000,2048000
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_tex_write_transactions","L2 Transactions (Texture Writes)",51200,51200,51200
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_read_throughput","L2 Throughput (Reads)",125.171123GB/s,125.194791GB/s,125.181861GB/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_write_throughput","L2 Throughput (Writes)",3.129585GB/s,3.130041GB/s,3.129244GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_read_throughput","L2 Throughput (Reads)",125.190390GB/s,125.230448GB/s,125.209801GB/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_write_throughput","L2 Throughput (Writes)",3.129945GB/s,3.131068GB/s,3.129244GB/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_read_throughput","System Memory Read Throughput",0.000000B/s,0.000000B/s,0.000000B/s
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_write_throughput","System Memory Write Throughput",320.431641KB/s,320.478516KB/s,0.000000B/s
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_write_throughput","System Memory Write Throughput",320.468750KB/s,320.583008KB/s,0.000000B/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_utilization","L2 Cache Utilization","Mid (4)","Mid (4)","Mid (4)"
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_atomic_throughput","L2 Throughput (Atomic requests)",0.000000B/s,0.000000B/s,0.000000B/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"l2_atomic_transactions","L2 Transactions (Atomic requests)",0,0,0
@@ -114,6 +114,6 @@
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"ecc_throughput","ECC Throughput",0.000000B/s,0.000000B/s,0.000000B/s
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_read_utilization","System Memory Read Utilization","Idle (0)","Idle (0)","Idle (0)"
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"sysmem_write_utilization","System Memory Write Utilization","Low (1)","Low (1)","Low (1)"
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",2.667019,2.670095,2.668557
-"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",11.963293%,11.985170%,11.974232%
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"eligible_warps_per_cycle","Eligible Warps Per Active Cycle",2.661434,2.665602,2.663518
+"GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"flop_sp_efficiency","FLOP Efficiency(Peak Single)",11.986837%,11.988782%,11.987810%
 "GeForce GTX 950 (0)","void matrixMulCUDA<int=8>(float*, float*, float*, int, int)",2,"flop_dp_efficiency","FLOP Efficiency(Peak Double)",0.000000%,0.000000%,0.000000%
