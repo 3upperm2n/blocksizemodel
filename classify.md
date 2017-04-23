@@ -43,6 +43,7 @@ BRA
 ```
 
 * **Understand static SASS**
+
 According to [microbenchmarks](https://github.com/3upperm2n/gpuBenchmarking), 
 we know that,besides IMUL (86 clocks) and IMAD (101 clocks), other interger SASSes are 15 clocks.
 
