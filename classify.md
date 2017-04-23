@@ -53,6 +53,7 @@ SP are all 15 clocks.
 Fo DP, DADD, DMUL and DMNMX are 48 clocks,  DFMA is 51 clocks.
 
 * **Understand the dynamic SASS**
+
 We extract info from profile metrics for the application. 
 ```
 instruction per warp
