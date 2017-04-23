@@ -51,3 +51,13 @@ For integer SASS, besides IMUL (86 clocks) and IMAD (101 clocks), others are 15 
 SP are all 15 clocks.
 
 Fo DP, DADD, DMUL and DMNMX are 48 clocks,  DFMA is 51 clocks.
+
+* **Understand the dynamic SASS**
+We extract info from profile metrics for the application. 
+```
+instruction per warp
+integer instrucitons numbers
+fp 32 instruction numbers
+fp 64 instruction numbers
+ld st instruction numbers
+```
