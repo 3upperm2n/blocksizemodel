@@ -6,7 +6,7 @@ From the profiled metrics using nvprof, we know the instructions per warp and th
 
 
 ### Demo 1 : **Vector Add**
-* Dump sass from your compiled gpu binary.
+* **Dump sass from your compiled gpu binary.**
 ```bash
 cuobjdump -sass  -arch=sm_52 ./vectorAdd_bs64 > vectorAdd_bs64.sm52.sass 2>&1
 ```
