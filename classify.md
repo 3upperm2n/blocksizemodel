@@ -12,6 +12,7 @@ cuobjdump -sass  -arch=sm_52 ./vectorAdd_bs64 > vectorAdd_bs64.sm52.sass 2>&1
 ```
 
 * **Script to list all the SASS instruction**
+
 The script will remove the headers, lines with prediction (such as, "@P0 EXIT;"), empty lines, NOP and EXIT lines.
 (vectorAdd_bs64.sm52.sass)
 ```
@@ -103,4 +104,10 @@ FP64 inst. (per warp) = 0.0 (clocks)
 ```
 ./sassGen
 ```
+
+* **Script to list all the SASS instruction**
+```
+$./sassResultGen.sh
+```
+
 
