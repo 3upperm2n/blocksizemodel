@@ -10,3 +10,5 @@ Graphics apps are not included since the nature of non-stop rendering.
 * BlackScholes (finance)
 * mergeSort  
 
+# Classify Kernel
+check classify.md

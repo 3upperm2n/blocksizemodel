@@ -4,6 +4,12 @@ we study the SASS trace from cuobjdump (static).
 
 From the profiled metrics using nvprof, we know the instructions per warp and the portion of each data type.
 
+We need to have both trace and metrics for the application.
+
+```
+nvprof --print-gpu-trace --csv ./yourApp  2> trace.csv
+nvprof --metrics all --csv ./yourApp  2> metrics.csv
+```
 
 ### Demo 1 : **Vector Add**
 * **Dump sass from your compiled gpu binary.**
@@ -11,7 +17,8 @@ From the profiled metrics using nvprof, we know the instructions per warp and th
 cuobjdump -sass  -arch=sm_52 ./vectorAdd_bs64 > vectorAdd_bs64.sm52.sass 2>&1
 ```
 
-* Script to understand the SASS instruction
+* **Script to list all the SASS instruction**
+
 The script will remove the headers, lines with prediction (such as, "@P0 EXIT;"), empty lines, NOP and EXIT lines.
 (vectorAdd_bs64.sm52.sass)
 ```
@@ -97,3 +104,16 @@ FP64 inst. number (round up)  = 0.0
 FP64 inst. (per warp) = 0.0 (clocks)
 => Compute inst. (per warp) = 195.0 (clocks)
 ```
+
+### Demo 2 : **matrix multiplication**
+* **Dump sass from your compiled gpu binary.**
+```
+./sassGen
+```
+
+* **Script to list all the SASS instruction**
+```
+$./sassResultGen.sh
+```
+
+
