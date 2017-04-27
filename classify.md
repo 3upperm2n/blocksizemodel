@@ -4,6 +4,12 @@ we study the SASS trace from cuobjdump (static).
 
 From the profiled metrics using nvprof, we know the instructions per warp and the portion of each data type.
 
+We need to have both trace and metrics for the application.
+
+```
+nvprof --print-gpu-trace --csv ./yourApp  2> trace.csv
+nvprof --metrics all --csv ./yourApp  2> metrics.csv
+```
 
 ### Demo 1 : **Vector Add**
 * **Dump sass from your compiled gpu binary.**
