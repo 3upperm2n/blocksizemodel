@@ -1,0 +1,10 @@
+==13308== NVPROF is profiling process 13308, command: ./c++11_cuda
+==13308== Profiling application: ./c++11_cuda
+==13308== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,B,B,MB,GB/s,,,,
+572.656221,0.520291,,,,,,,,,,3.074172,5.770081,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+573.200781,0.000818,,,,,,,,,,0.000004,0.004554,"GeForce GTX 950 (0)","1","7","[CUDA memset]"
+573.231136,0.679364,8,1,1,256,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","7","xyzw_frequency(int*, char*, int) [212]"
+573.912932,215.931831,1,1,1,1,1,1,12,0,0,,,"GeForce GTX 950 (0)","1","7","xyzw_frequency_thrust_device(int*, char*, int) [217]"
+789.846523,0.001632,,,,,,,,,,0.000004,0.002283,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
