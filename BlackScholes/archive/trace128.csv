@@ -1,0 +1,20 @@
+==20174== NVPROF is profiling process 20174, command: ./BlackScholes
+==20174== Profiling application: ./BlackScholes
+==20174== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,B,B,MB,GB/s,,,,
+742.611137,2.704987,,,,,,,,,,15.258789,5.508774,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+745.425499,2.640123,,,,,,,,,,15.258789,5.644116,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+748.172726,2.638139,,,,,,,,,,15.258789,5.648361,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+750.854577,0.858174,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [222]"
+751.715151,0.854974,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [233]"
+752.572269,0.856798,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [244]"
+753.431243,0.855423,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [255]"
+754.288810,0.854782,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [266]"
+755.145928,0.856542,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [277]"
+756.004614,0.854814,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [288]"
+756.861572,0.856127,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [299]"
+757.719843,0.855582,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [310]"
+758.577601,0.855998,15625,1,1,128,1,1,24,0,0,,,"GeForce GTX 950 (0)","1","7","BlackScholesGPU(float2*, float2*, float2*, float2*, float2*, float, float, int) [321]"
+759.462687,3.421881,,,,,,,,,,15.258789,4.354670,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
+763.122648,3.519929,,,,,,,,,,15.258789,4.233370,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
