@@ -1,0 +1,15 @@
+==16791== NVPROF is profiling process 16791, command: ./concurrentKernels
+==16791== Profiling application: ./concurrentKernels
+==16791== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,B,B,B,MB/s,,,,
+570.735505,11.615972,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","13","clock_block(long*, long) [231]"
+570.745361,11.667205,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","14","clock_block(long*, long) [237]"
+570.752977,11.615428,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","15","clock_block(long*, long) [243]"
+570.760305,11.667205,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","16","clock_block(long*, long) [249]"
+570.767409,11.615268,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","17","clock_block(long*, long) [255]"
+570.774161,11.667109,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","18","clock_block(long*, long) [261]"
+570.780337,11.615076,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","19","clock_block(long*, long) [267]"
+570.787057,11.666949,1,1,1,1,1,1,8,0,0,,,"GeForce GTX 950 (0)","1","20","clock_block(long*, long) [273]"
+582.457718,0.002656,1,1,1,32,1,1,8,256,0,,,"GeForce GTX 950 (0)","1","21","sum(long*, int) [279]"
+582.465654,0.001728,,,,,,,,,,8,4.415158,"GeForce GTX 950 (0)","1","21","[CUDA memcpy DtoH]"
