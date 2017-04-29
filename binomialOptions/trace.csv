@@ -1,0 +1,8 @@
+==27895== NVPROF is profiling process 27895, command: ./binomialOptions
+==27895== Profiling application: ./binomialOptions
+==27895== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,B,B,KB,GB/s,,,,
+632.996316,0.003264,,,,,,,,,,20.000000,5.843593,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+633.014523,9.796175,1024,1,1,128,1,1,32,516,0,,,"GeForce GTX 950 (0)","1","7","binomialOptionsKernel(void) [208]"
+642.812298,0.001920,,,,,,,,,,4.000000,1.986821,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
