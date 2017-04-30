@@ -203,7 +203,8 @@ def GenCurKernInfo(df_trace, df_metrics, target_kern, out_columns):
 
 def FindColVal(df_metrics, target_kern, colname):
     for index, row in df_metrics.iterrows():
-        kern_name = row.Kernel.lower()
+        kern_name = str(row.Kernel).lower()   # convert the kernel to string
+
         if target_kern in kern_name: # find the right kernel
             if row['Metric Name'] == colname: # right metric names
                 return row['Avg']
