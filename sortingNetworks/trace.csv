@@ -1,0 +1,10 @@
+==7591== NVPROF is profiling process 7591, command: ./sortingNetworks
+==7591== Profiling application: ./sortingNetworks
+==7591== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,KB,B,MB,GB/s,,,,
+586.576339,691.013000,,,,,,,,,,4.000000,5.652933,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+587.386073,686.118000,,,,,,,,,,4.000000,5.693263,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+588.110303,828.903000,1024,1,1,512,1,1,14,8.000000,0,,,"GeForce GTX 950 (0)","1","7","bitonicSortShared(unsigned int*, unsigned int*, unsigned int*, unsigned int*, unsigned int, unsigned int) [218]"
+588.958278,785.190000,,,,,,,,,,4.000000,4.974911,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
+590.161135,789.575000,,,,,,,,,,4.000000,4.947282,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
