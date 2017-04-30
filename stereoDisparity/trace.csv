@@ -1,0 +1,11 @@
+==8900== NVPROF is profiling process 8900, command: ./stereoDisparity
+==8900== Profiling application: ./stereoDisparity
+==8900== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,KB,B,MB,GB/s,,,,
+579.138880,0.222850,,,,,,,,,,1.301270,5.702360,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+579.488355,0.222177,,,,,,,,,,1.301270,5.719634,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+579.831397,0.221826,,,,,,,,,,1.301270,5.728684,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+580.060167,2.197969,20,67,1,32,8,1,29,4.500000,0,,,"GeForce GTX 950 (0)","1","7","stereoDisparityKernel(unsigned int*, unsigned int*, unsigned int*, int, int, int, int) [223]"
+582.293624,2.197680,20,67,1,32,8,1,29,4.500000,0,,,"GeForce GTX 950 (0)","1","7","stereoDisparityKernel(unsigned int*, unsigned int*, unsigned int*, int, int, int, int) [236]"
+584.508745,0.227489,,,,,,,,,,1.301270,5.586077,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
