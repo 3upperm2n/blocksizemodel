@@ -1,0 +1,16 @@
+==11481== NVPROF is profiling process 11481, command: ./dxtc
+==11481== Profiling application: ./dxtc
+==11481== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,KB,B,MB,GB/s,,,,
+575.576980,0.001312,,,,,,,,,,0.003906,2.907544,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+575.713429,0.169089,,,,,,,,,,1.000000,5.775435,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+575.973078,2.195406,4608,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [216]"
+578.170788,2.193454,4608,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [222]"
+580.366578,2.194094,4608,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [228]"
+582.562976,1.226216,2560,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [234]"
+583.808488,2.195726,4608,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [241]"
+586.006518,2.193614,4608,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [247]"
+588.202468,2.194990,4608,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [253]"
+590.399762,1.225704,2560,1,1,64,1,1,91,2.000000,0,,,"GeForce GTX 950 (0)","1","7","compress(unsigned int const *, unsigned int const *, uint2*, int) [259]"
+591.646234,0.021952,,,,,,,,,,0.125000,5.560783,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
