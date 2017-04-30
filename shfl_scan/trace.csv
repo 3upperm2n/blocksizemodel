@@ -1,0 +1,18 @@
+==1084== NVPROF is profiling process 1084, command: ./shfl_scan
+==1084== Profiling application: ./shfl_scan
+==1084== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,KB,B,MB,GB/s,,,,
+568.519047,0.000902,,,,,,,,,,0.000977,1.057289,"GeForce GTX 950 (0)","1","7","[CUDA memset]"
+568.816399,0.043169,,,,,,,,,,0.250000,5.655462,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+568.891504,0.014208,256,1,1,256,1,1,16,0.000000,32,,,"GeForce GTX 950 (0)","1","7","shfl_scan_test(int*, int, int*) [230]"
+568.907888,0.001984,1,1,1,256,1,1,16,0.000000,32,,,"GeForce GTX 950 (0)","1","7","shfl_scan_test(int*, int, int*) [235]"
+568.912304,0.006336,255,1,1,256,1,1,8,0.015625,0,,,"GeForce GTX 950 (0)","1","7","uniform_add(int*, int*, int) [240]"
+568.933424,0.042336,,,,,,,,,,0.250000,5.766738,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
+568.984368,0.001728,,,,,,,,,,0.000977,0.551895,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
+573.809582,0.086497,,,,,,,,,,7.910156,89.306704,"GeForce GTX 950 (0)","1","7","[CUDA memset]"
+573.897935,0.086624,,,,,,,,,,7.910156,89.175771,"GeForce GTX 950 (0)","1","7","[CUDA memset]"
+573.988175,0.115841,1080,1,1,120,1,1,32,0.500000,0,,,"GeForce GTX 950 (0)","1","7","shfl_intimage_rows(uint4*, uint4*) [262]"
+574.121616,1.301000,,,,,,,,,,7.910156,5.937557,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
+576.014652,0.259233,60,1,1,32,8,1,23,1.125000,0,,,"GeForce GTX 950 (0)","1","7","shfl_vertical_shfl(unsigned int*, int, int) [272]"
+576.291677,1.301288,,,,,,,,,,7.910156,5.936243,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
