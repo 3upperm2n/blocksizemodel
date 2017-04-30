@@ -1,0 +1,8 @@
+==6032== NVPROF is profiling process 6032, command: ./SobolQRNG
+==6032== Profiling application: ./SobolQRNG
+==6032== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,ms,,,,,,,,B,B,MB,GB/s,,,,
+571.296073,0.002272,,,,,,,,,,0.012207,5.246888,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+571.554188,0.437188,1,100,1,64,1,1,19,128,0,,,"GeForce GTX 950 (0)","1","7","sobolGPU_kernel(unsigned int, unsigned int, unsigned int*, float*) [215]"
+572.020624,8.647377,,,,,,,,,,38.146973,4.308000,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
