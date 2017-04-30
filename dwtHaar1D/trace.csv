@@ -1,0 +1,12 @@
+==9419== NVPROF is profiling process 9419, command: ./dwtHaar1D
+==9419== Profiling application: ./dwtHaar1D
+==9419== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,B,KB,KB,GB/s,,,,
+570.988402,2.720000,,,,,,,,,,16.000000,5.609849,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+571.009138,1.568000,4,1,1,512,1,1,8,0,0.000000,,,"GeForce GTX 950 (0)","1","7","initValue(float*, float) [211]"
+571.018322,3.328000,4,1,1,512,1,1,17,0,4.250000,,,"GeForce GTX 950 (0)","1","7","dwtHaar1D(float*, float*, float*, unsigned int, unsigned int, int) [219]"
+571.028434,1.600000,,,,,,,,,,0.015625,0.009313,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoD]"
+571.037618,1.696000,1,1,1,2,1,1,17,0,0.015625,,,"GeForce GTX 950 (0)","1","7","dwtHaar1D(float*, float*, float*, unsigned int, unsigned int, int) [228]"
+571.047218,1.152000,,,,,,,,,,0.003906,0.003234,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoD]"
+571.058130,4.192000,,,,,,,,,,16.000000,3.639978,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
