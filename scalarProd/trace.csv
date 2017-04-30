@@ -1,0 +1,9 @@
+==26963== NVPROF is profiling process 26963, command: ./scalarProd
+==26963== Profiling application: ./scalarProd
+==26963== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,KB,B,MB,GB/s,,,,
+601.109295,680.421000,,,,,,,,,,4.000000,5.740931,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+601.910964,690.309000,,,,,,,,,,4.000000,5.658698,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+602.642938,91.968000,128,1,1,256,1,1,24,4.000000,0,,,"GeForce GTX 950 (0)","1","7","scalarProdGPU(float*, float*, float*, int, int) [216]"
+602.757818,1.825000,,,,,,,,,,0.000977,0.522561,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"
