@@ -1,0 +1,19 @@
+==18938== NVPROF is profiling process 18938, command: ./mm16
+==18938== Profiling application: ./mm16
+==18938== Profiling result:
+"Start","Duration","Grid X","Grid Y","Grid Z","Block X","Block Y","Block Z","Registers Per Thread","Static SMem","Dynamic SMem","Size","Throughput","Device","Context","Stream","Name"
+ms,us,,,,,,,,KB,B,KB,GB/s,,,,
+570.775568,67.457000,,,,,,,,,,400.000000,5.655006,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+570.947218,132.290000,,,,,,,,,,800.000000,5.767174,"GeForce GTX 950 (0)","1","7","[CUDA memcpy HtoD]"
+571.084724,518.277000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [209]"
+571.621881,519.334000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [220]"
+572.143359,518.309000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [227]"
+572.663812,518.214000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [234]"
+573.184202,520.806000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [241]"
+573.707184,518.917000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [248]"
+574.228501,520.710000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [255]"
+574.751387,518.309000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [262]"
+575.271872,518.758000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [269]"
+575.792806,519.013000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [276]"
+576.313963,519.014000,40,20,1,16,16,1,27,2.000000,0,,,"GeForce GTX 950 (0)","1","7","void matrixMulCUDA<int=16>(float*, float*, float*, int, int) [283]"
+576.858033,130.178000,,,,,,,,,,800.000000,5.860740,"GeForce GTX 950 (0)","1","7","[CUDA memcpy DtoH]"

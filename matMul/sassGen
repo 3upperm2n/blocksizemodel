@@ -1,0 +1,4 @@
+cuobjdump -sass  -arch=sm_52 ./mm4  > mm4.sm52.sass 2>&1
+cuobjdump -sass  -arch=sm_52 ./mm8  > mm8.sm52.sass 2>&1
+cuobjdump -sass  -arch=sm_52 ./mm16 > mm16.sm52.sass 2>&1
+cuobjdump -sass  -arch=sm_52 ./mm32 > mm32.sm52.sass 2>&1
