@@ -4,11 +4,7 @@ Understanding the block size effect on gpu kernel runtime for a particular gpu a
 # Applications in cuda sdk 8.0
 Graphics apps are not included since the nature of non-stop rendering.
 
-* vector add 
-* matrix mul
-* convfft2d (imaging)
-* BlackScholes (finance)
-* mergeSort  
+Applications that take long time (> 1 min) to profiling are not included.
 
 # Classify Kernel
 check classify.md
