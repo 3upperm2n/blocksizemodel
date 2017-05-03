@@ -16,13 +16,17 @@
 ////////////////////////////////////////////////////////////////////////////////
 typedef unsigned int uint;
 
-//#define SHARED_SIZE_LIMIT 1024U
+#define SHARED_SIZE_LIMIT 1024U
 //#define SHARED_SIZE_LIMIT 512U 
 //#define SHARED_SIZE_LIMIT 256U 
-#define SHARED_SIZE_LIMIT 128U
+//#define SHARED_SIZE_LIMIT 128U
 
 
 #define     SAMPLE_STRIDE 128
+//#define     SAMPLE_STRIDE 32 
+//#define     SAMPLE_STRIDE 64 
+//#define     SAMPLE_STRIDE 256 
+//#define     SAMPLE_STRIDE 512 
 
 
 
