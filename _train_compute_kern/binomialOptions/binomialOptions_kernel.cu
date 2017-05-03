@@ -54,7 +54,17 @@ __device__ inline double expiryCallValue(double S, double X, double vDt, int i)
 ////////////////////////////////////////////////////////////////////////////////
 // GPU kernel
 ////////////////////////////////////////////////////////////////////////////////
-#define THREADBLOCK_SIZE 128
+//#define THREADBLOCK_SIZE 128
+//#define THREADBLOCK_SIZE 64 
+//#define THREADBLOCK_SIZE 32 
+//#define THREADBLOCK_SIZE 256 
+//#define THREADBLOCK_SIZE 512 
+#define THREADBLOCK_SIZE 1024 
+
+
+
+
+
 #define ELEMS_PER_THREAD (NUM_STEPS/THREADBLOCK_SIZE)
 #if NUM_STEPS % THREADBLOCK_SIZE
 #error Bad constants
