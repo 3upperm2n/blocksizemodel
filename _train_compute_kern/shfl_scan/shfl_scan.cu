@@ -242,7 +242,16 @@ bool shuffle_simple_test(int argc, char **argv)
         h_data[i] = 1;
     }
 
-    int blockSize = 256;
+    //int blockSize = 256;
+    //int blockSize = 128;
+    //int blockSize = 64;
+    //int blockSize = 32;
+    //int blockSize = 512;
+    int blockSize = 1024;
+
+
+
+
     int gridSize = n_elements/blockSize;
     int nWarps = blockSize/32;
     int shmem_sz = nWarps * sizeof(int);
@@ -319,7 +328,19 @@ bool shuffle_integral_image_test()
     memset(h_image, 0, sz);
 
     // each thread handles 16 values, use 1 block/row
+
+
+
     int blockSize = iDivUp(w,16);
+    //int blockSize = iDivUp(w,4);
+    //int blockSize = iDivUp(w,8);
+    //int blockSize = iDivUp(w,32);
+    //int blockSize = iDivUp(w,64);
+    //int blockSize = iDivUp(w,128);
+
+
+
+
     // launch 1 block / row
     int gridSize = h;
 
@@ -339,6 +360,7 @@ bool shuffle_integral_image_test()
     // Execute scan line prefix sum kernel, and time it
     cudaEventRecord(start);
     shfl_intimage_rows<<<gridSize,blockSize>>>((uint4 *)d_data, (uint4 *)d_integral_image);
+
     cudaEventRecord(stop);
     checkCudaErrors(cudaEventSynchronize(stop));
     checkCudaErrors(cudaEventElapsedTime(&et, start, stop));
@@ -350,7 +372,7 @@ bool shuffle_integral_image_test()
     printf("Diff = %d\n", err);
 
     // Execute column prefix sum kernel and time it
-    //dim3 blockSz(32, 8);
+    dim3 blockSz(32, 8);
     //dim3 blockSz(4, 8);
     //dim3 blockSz(8, 8);
     //dim3 blockSz(16, 8);
