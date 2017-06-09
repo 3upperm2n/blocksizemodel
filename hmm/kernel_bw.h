@@ -5,7 +5,10 @@
 
 
 #ifndef TILE
-#define TILE 16	// 2D Kernel Tiling
+//#define TILE 4	// 2D Kernel Tiling
+//#define TILE 8	// 2D Kernel Tiling
+//#define TILE 16	// 2D Kernel Tiling
+#define TILE 32	// 2D Kernel Tiling
 #endif
 
 #ifndef SIZE 

@@ -1,0 +1,3 @@
+==23536== NVPROF is profiling process 23536, command: ./radixSortThrust
+==23536== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==23536== Profiling application: ./radixSortThrust

@@ -34,8 +34,32 @@ const char *sSDKsample = "Transpose";
 // using TILE_DIM x BLOCK_ROWS threads, so that each thread transposes
 // TILE_DIM/BLOCK_ROWS elements.  TILE_DIM must be an integral multiple of BLOCK_ROWS
 
-#define TILE_DIM    16
-#define BLOCK_ROWS  16
+//#define TILE_DIM   2 
+//#define BLOCK_ROWS 2 
+
+//#define TILE_DIM   4 
+//#define BLOCK_ROWS 4 
+
+//#define TILE_DIM   8 
+//#define BLOCK_ROWS 4 
+
+//#define TILE_DIM   16 
+//#define BLOCK_ROWS 4 
+
+//#define TILE_DIM   8 
+//#define BLOCK_ROWS 8 
+
+//#define TILE_DIM   16 
+//#define BLOCK_ROWS 8 
+
+//#define TILE_DIM   32 
+//#define BLOCK_ROWS 16 
+
+//#define TILE_DIM    16
+//#define BLOCK_ROWS  16
+
+#define TILE_DIM   32 
+#define BLOCK_ROWS 32 
 
 // This sample assumes that MATRIX_SIZE_X = MATRIX_SIZE_Y
 int MATRIX_SIZE_X = 1024;

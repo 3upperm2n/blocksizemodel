@@ -120,13 +120,16 @@ extern "C" void modulateAndNormalize(
 // 2D R2C / C2R post/preprocessing kernels
 ////////////////////////////////////////////////////////////////////////////////
 static const double PI = 3.1415926535897932384626433832795;
-//static const uint BLOCKDIM = 1024;
+
+static const uint BLOCKDIM = 1024;
 //static const uint BLOCKDIM = 512;
 //static const uint BLOCKDIM = 256;
 //static const uint BLOCKDIM = 128;
-static const uint BLOCKDIM = 64;
 //static const uint BLOCKDIM = 32;
 //static const uint BLOCKDIM = 16;
+
+
+//static const uint BLOCKDIM = 64;
 
 extern "C" void spPostprocess2D(
     void *d_Dst,

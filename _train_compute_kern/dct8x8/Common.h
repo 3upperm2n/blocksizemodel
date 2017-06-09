@@ -30,7 +30,9 @@
 /**
 *  The dimension of pixels block
 */
-#define BLOCK_SIZE          8
+//#define BLOCK_SIZE          8
+//#define BLOCK_SIZE          16 
+#define BLOCK_SIZE          32 
 
 
 /**

@@ -615,6 +615,13 @@ void em_gammaobs(
 	dim3 block(TILE, TILE);                                                           
 	dim3 grid((T + TILE - 1)/TILE, (D + TILE - 1)/TILE);
 
+	////dim3 block(4, 4);                                                           
+	////dim3 block(8, 8);                                                           
+	////dim3 block(16, 8);                                                           
+	////dim3 block(16, 16);                                                           
+	////dim3 block(32, 32);                                                           
+	//dim3 grid((T + block.x - 1)/block.x, (D + block.y - 1)/block.y);
+
 	EM_gammaobs <<< grid, block >>> (observationsT_d, gamma_obs_d, T);
 }
 
@@ -651,6 +658,13 @@ void em_expectmu(
 {
 	dim3 block(TILE, TILE);                                                           
 	dim3 grid(1, (D + TILE - 1)/TILE);
+
+	////dim3 block(4, 4);
+	//dim3 block(8, 8);
+	////dim3 block(16, 8);
+	////dim3 block(16, 16);
+	////dim3 block(32, 32);
+	//dim3 grid(1, (D + block.x - 1)/block.x);
 
 	/// use the gamma_state_sumC in em_gammastatesum()
 	EM_expectmu <<< grid, block >>> (
@@ -706,8 +720,16 @@ void em_expectsigma_dev(
 	/// gamma_obs * obs' / gamma_state_sum(s) - exp_mu(:, s) * exp_mu(:, s)'
 	/// gamma_obs	: D x T
 	/// obs			: T x D 
-	dim3 block_12(8, 8);                                                            
+
+	dim3 block_12(8, 8);
 	dim3 grid_12((D+7)/8, (D+7)/8);
+
+	////dim3 block_12(4, 4);
+	////dim3 block_12(8, 8);
+	////dim3 block_12(16, 8);
+	////dim3 block_12(16, 16);
+	//dim3 block_12(32, 32);
+	//dim3 grid_12((D+block_12.x-1)/block_12.x, (D+block_12.y - 1)/block_12.y);
 
 	EM_expectsigma_dev <<< grid_12, block_12 >>> (
 			gamma_obs_d, 
@@ -756,8 +778,18 @@ void em_update_expectsigma(
 	/// symmtrize function                                                       
 	/// 1) use upper trianglular part to update the lower triangular part
 	/// 2) add 0.01 on the diagnal element
+
 	dim3 block_13(TILE, TILE);                                                      
 	dim3 grid_13((D+TILE-1)/TILE, (D+TILE-1)/TILE);
+
+
+	////dim3 block_13(4, 4);                                                           
+	////dim3 block_13(8, 8);                                                           
+	////dim3 block_13(16, 8);
+	//dim3 block_13(16, 16);                                                           
+	////dim3 block_13(32, 32);
+	//dim3 grid_13((D + block_13.x - 1)/block_13.x, (D + block_13.y - 1)/block_13.y);
+
 	
 	EM_update_expectsigma <<< grid_13, block_13 >>> (expect_sigma_d, 
 			expect_sigma_sym_d,

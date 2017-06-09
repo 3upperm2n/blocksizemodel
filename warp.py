@@ -18,33 +18,33 @@ class WarpInst():
         self.thread_integer = 0
         self.thread_bit_convert = 0
         self.thread_control = 0
-        self.thread_compute_ld_st = 0
+        self.thread_compute_ldst = 0
         self.thread_misc = 0
 
-        self.gld_transactions_per_request = 0
-        self.gst_transactions_per_request = 0
-        self.gld_gst_ratio = 0
 
         # sass hist dictionary
         self.sass_hist = {}
 
         # global mem
-        self.thread_gld = 0
-        self.thread_gst = 0
+        self.thread_ldg = 0.0
+        self.thread_stg = 0.0
+
+        # shared mem
+        self.thread_lds= 0.0
+        self.thread_sts= 0.0
 
         # warp compute 
-        self.int_clks = 0
-        self.fp32_clks = 0
-        self.fp64_clks = 0
-        self.cmp_clks = 0
+        self.int_clks = 0.0
+        self.fp32_clks = 0.0
+        self.fp64_clks = 0.0
+        self.compute_ldst_clks = 0.0
+        self.cmp_clks = 0.0
 
         # warp memory
-        self.gld_clks = 0 # gld clocks
-        self.gst_clks = 0 # gst clocks
-        self.shared_ld_clks = 0 # shared load  clocks
-        self.shared_st_clks = 0 # shared store clocks
-        self.const_ld_clks  = 0 # const  load  clocks
-        self.tex_ld_clks    = 0 # tex    load  clocks
+        self.ldg_clks = 0
+        self.stg_clks = 0
+        self.lds_clks = 0
+        self.sts_clks = 0
         self.mem_clks = 0
 
     def compute_all_thread_inst(self):
@@ -94,12 +94,19 @@ class WarpInst():
         self.thread_integer = float(df_kern.inst_integer) / total_threads
         self.thread_bit_convert = float(df_kern.inst_bit_convert) / total_threads
         self.thread_control = float(df_kern.inst_control) / total_threads
-        self.thread_compute_ld_st = float(df_kern.inst_compute_ld_st) / total_threads
+        self.thread_compute_ldst = float(df_kern.inst_compute_ld_st) / total_threads
         self.thread_misc = float(df_kern.inst_misc) / total_threads
 
-        self.gld_transactions_per_request = float(df_kern.gld_transactions_per_request)
-        self.gst_transactions_per_request = float(df_kern.gst_transactions_per_request)
-        self.gld_gst_ratio = self.gld_transactions_per_request / self.gst_transactions_per_request
+        # global memory
+        self.thread_ldg = float(df_kern.gld_transactions) / total_threads
+        self.thread_stg = float(df_kern.gst_transactions) / total_threads
+
+        # shared memory
+        self.thread_lds = float(df_kern.shared_load_transactions) / total_threads
+        self.thread_sts = float(df_kern.shared_store_transactions) / total_threads
+
+
+
 
     def read_sass(self, sass_result_file):
         """read sass from result file"""
@@ -112,16 +119,13 @@ class WarpInst():
 
     def compute_int_clocks(self):
         """ compute integer sass clocks"""
-        #total_int_inst = ceil(self.thread_integer)
-        total_int_inst = np.rint(self.thread_integer)
-        print('Int inst. number (before)    = {}'.format(self.thread_integer))
-        print('Int inst. number (round up)  = {}'.format(total_int_inst))
+        total_int_inst = ceil(self.thread_integer)
+        #print('Int inst. number (round up)  = {}'.format(total_int_inst))
 
         # on maxwell gpu + cuda 8.0
         # imul is 86 , imad is 101, others are 15
         imul_count, imad_count = 0, 0
         for key, value in self.sass_hist.iteritems():
-            #print('{}'.format(key))
             if 'IMUL' in key: imul_count += 1
             if 'IMAD' in key: imad_count += 1
 
@@ -131,10 +135,8 @@ class WarpInst():
 
     def compute_fp32_clocks(self):
         """ compute fp32 instructions clocks per warp"""
-        #total_fp32_inst = ceil(self.thread_fp_32)
-        total_fp32_inst = np.rint(self.thread_fp_32)
-        print('FP32 inst. number (before)    = {}'.format(self.thread_fp_32))
-        print('FP32 inst. number (round up)  = {}'.format(total_fp32_inst))
+        total_fp32_inst = ceil(self.thread_fp_32)
+        #print('FP32 inst. number (round up)  = {}'.format(total_fp32_inst))
 
         # each fp32 SASS is 15 clocks
         self.fp32_clks = total_fp32_inst * 15
@@ -142,10 +144,8 @@ class WarpInst():
 
     def compute_fp64_clocks(self):
         """ compute fp64 instructions clocks per warp"""
-        #total_fp64_inst = ceil(self.thread_fp_64)
-        total_fp64_inst = np.rint(self.thread_fp_64)
-        print('FP64 inst. number (before)    = {}'.format(self.thread_fp_64))
-        print('FP64 inst. number (round up)  = {}'.format(total_fp64_inst))
+        total_fp64_inst = ceil(self.thread_fp_64)
+        #print('FP64 inst. number (round up)  = {}'.format(total_fp64_inst))
 
         # on maxwell gpu + cuda 8.0
         # imul is 86 , imad is 101, others are 15
@@ -156,6 +156,13 @@ class WarpInst():
         self.fp64_clks = 48 * (total_fp64_inst - dfma_count) + 51 * dfma_count
 
 
+    def compute_ldst_clocks(self):
+        """ compute ld st instructions """
+        ### compute load store instructions mostly offseting address
+        total_compute_ldst = ceil(self.thread_compute_ldst)
+
+        self.compute_ldst_clks = 15 * total_compute_ldst 
+
 
     def cal_cmp_clocks(self):
         """ compute instructions clocks per warp"""
@@ -163,78 +170,64 @@ class WarpInst():
         # integer
         #
         self.compute_int_clocks()
-        print('Integer inst. (per warp) = {} (clocks)'.format(self.int_clks))
+        print('Integer inst. (per warp) \t\t = {} (clocks)'.format(self.int_clks))
 
         #
         # fp32 
         #
         self.compute_fp32_clocks()
-        print('FP32 inst. (per warp) = {} (clocks)'.format(self.fp32_clks))
+        print('FP32 inst. (per warp) \t\t\t = {} (clocks)'.format(self.fp32_clks))
 
         #
         # fp64 
         #
         self.compute_fp64_clocks()
-        print('FP64 inst. (per warp) = {} (clocks)'.format(self.fp64_clks))
+        print('FP64 inst. (per warp) \t\t\t = {} (clocks)'.format(self.fp64_clks))
+
+        #
+        # compute_ld_st 
+        #
+        self.compute_ldst_clocks()
+        print('Compute load store inst. (per warp) \t = {} (clocks)'.format(self.compute_ldst_clks))
+
 
         #
         # sum up
         #
-        self.cmp_clks = self.int_clks + self.fp32_clks + self.fp64_clks
+        self.cmp_clks = self.int_clks + self.fp32_clks + self.fp64_clks + self.compute_ldst_clks
 
-        print('=> Compute inst. (per warp) = {} (clocks)\n'.format(self.cmp_clks))
+        print('=> Compute inst. (per warp) \t\t = {} (clocks)\n'.format(self.cmp_clks))
 
     def cal_mem_clocks(self):
         """ compute memory instructions clocks per warp"""
-        ld_count, st_count = 0, 0
-        for key, value in self.sass_hist.iteritems():
-            if 'LD' in key: ld_count += 1
-            if 'ST' in key: st_count += 1
-
-        print('ld sass = {} , st sass = {}'.format(ld_count, st_count))
-
-        #self.thread_compute_ld_st;
-        print('thread_compute_ld_st: {}'.format(self.thread_compute_ld_st))
-
         #
         # global mem : load and store
         #
-        gld_portion = self.gld_gst_ratio / (1 + self.gld_gst_ratio)
-        gst_portion = 1 - gld_portion
+        self.ldg_clks = ceil(self.thread_ldg) * 650.0
+        print('LDG (global load) clocks (per warp) \t\t = {}'.format(self.ldg_clks))
 
-        if ld_count > 0:
-            gld_num = np.rint(self.thread_compute_ld_st) * gld_portion 
-            gld_num = np.rint(gld_num)
-            print('gld inst num = {}'.format(gld_num))
-            self.gld_clks = gld_num * 650
-            print('Global load inst. (per warp) = {} (clocks)'.format(self.gld_clks))
-
-        if st_count > 0:
-            gst_num = np.rint(self.thread_compute_ld_st) * gst_portion 
-            gst_num = np.rint(gst_num)
-            print('gst inst num = {}'.format(gst_num))
-            self.gst_clks = gst_num * 15
-            print('Global store inst. (per warp) = {} (clocks)'.format(self.gst_clks))
+        self.stg_clks = ceil(self.thread_stg) * 19.0
+        print('STG (global store) clocks (per warp) \t\t = {}'.format(self.stg_clks))
 
         #
         # shared mem : load and store
         #
+        self.lds_clks = ceil(self.thread_lds) * 26.0
+        print('LDS (shared memory load) clocks (per warp) \t = {}'.format(self.lds_clks))
 
-        #
+        self.sts_clks = ceil(self.thread_sts) * 19.0
+        print('STS (shared memory store) clocks (per warp) \t = {}'.format(self.sts_clks))
+
         # const mem : load
-        #
 
-        #
         # texture mem : load
-        #
 
         #
         # Sum total 
         #
-        self.mem_clks = self.gld_clks + self.gst_clks + self.shared_ld_clks + \
-                self.shared_st_clks + self.const_ld_clks + self.tex_ld_clks
+        self.mem_clks = self.ldg_clks + self.stg_clks + self.lds_clks + self.sts_clks
 
-        print('=> Memory inst. (per warp) = {} (clocks)\n'.format(self.mem_clks))
+        print('=> Memory inst. (per warp) \t\t\t = {} (clocks)\n'.format(self.mem_clks))
 
 
     def run(self, df_kern, sass_result):
@@ -243,12 +236,15 @@ class WarpInst():
 
         self.read_sass(sass_result)
 
-        self.dumpinfo()
+        #self.dumpinfo()
         #self.dump_sass_hist()
 
         self.cal_mem_clocks()
 
         self.cal_cmp_clocks()
 
-
+        if self.mem_clks > self.cmp_clks:
+            print('Memory Intensive : mem / cmp = {}'.format(self.mem_clks /  self.cmp_clks))
+        else:
+            print('Compute Intensive : cmp / mem = {}'.format(self.cmp_clks /  self.mem_clks))
 

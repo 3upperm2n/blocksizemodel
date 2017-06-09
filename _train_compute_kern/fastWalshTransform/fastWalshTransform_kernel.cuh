@@ -152,6 +152,7 @@ void fwtBatchGPU(float *d_Data, int M, int log2N)
     const int THREAD_N = 1024;
 
     int N = 1 << log2N;
+
     dim3 grid((1 << log2N) / (4 * THREAD_N), M, 1);
 
     for (; log2N > ELEMENTARY_LOG2SIZE; log2N -= 2, N >>= 2, M <<= 2)

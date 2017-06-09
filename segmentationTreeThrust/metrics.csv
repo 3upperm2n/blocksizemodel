@@ -1,0 +1,3 @@
+==30953== NVPROF is profiling process 30953, command: ./segmentationTreeThrust
+==30953== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==30953== Profiling application: ./segmentationTreeThrust

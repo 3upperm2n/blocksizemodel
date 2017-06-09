@@ -15,10 +15,10 @@
 #define _CONFIG_H_
 
 // should be power of two
-//#define  MAX_THREADS_BLOCK                256
-//#define  MAX_THREADS_BLOCK               128 
+//define  MAX_THREADS_BLOCK                256
+#define  MAX_THREADS_BLOCK               128 
 //#define  MAX_THREADS_BLOCK              512 
-#define  MAX_THREADS_BLOCK             1024 
+//#define  MAX_THREADS_BLOCK             1024 
 
 #define  MAX_SMALL_MATRIX                 512
 #define  MAX_THREADS_BLOCK_SMALL_MATRIX   512

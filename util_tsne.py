@@ -202,8 +202,11 @@ def plot_tsne_2d(X_tsne_2d, y, top3rows):
 
 
 
-def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows):
+def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows, figname=None, kernelname=None):
     area = np.pi * (15 * 0.6)**2
+
+    txtFont = 13
+    legFont = 11
     
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -277,9 +280,9 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows):
 
 
         # annotate Kernel Name
-        ax.text(X_tsne_2d[i,0]+20, X_tsne_2d[i,1]-5,
+        ax.text(X_tsne_2d[i,0]+15, X_tsne_2d[i,1]-5,
                 #'%s' % (str(y_name[i])), size=17, zorder=2, color='k')
-                '%s' % (str(y_name[i])), size=10, zorder=2, color='k')
+                '%s' % (str(y_name[i])), size=txtFont, zorder=2, color='k')
 
     
    # annotate the input kernel (last kernel)
@@ -288,6 +291,10 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows):
               s=area,
               alpha=0.9,
               marker=(5, 1)) 
+
+    if kernelname <> None:
+        ax.text(X_tsne_2d[-1,0]-30, X_tsne_2d[-1,1]-50,
+                '%s' % (str(kernelname)), size=txtFont, zorder=2, color='k')
 
 
 
@@ -327,19 +334,25 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows):
     # cite: http://stackoverflow.com/questions/6146778/matplotlib-legend-markers-only-once
     # cite: http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.legend
     # example: http://matplotlib.org/users/legend_guide.html
-    ax.legend(
+    # manual: https://matplotlib.org/api/legend_api.html
+    leg = ax.legend(
             ncol=3, 
-            scatterpoints=1,
-            labelspacing=1,
+            #scatterpoints=1, # the number of points in the legend for scatter plot
+            labelspacing=1,     # the vertical space between the legend entries
             loc='upper center',
             #bbox_to_anchor=(0., 1.02, 1., 0.05),
             bbox_to_anchor=(0., 0.95, 1., 0.05),
-
             #bbox_to_anchor=(0., 1.02, 1., 0.04),
-            fancybox=True, shadow=True,
-            fontsize=10
+            #fancybox=True, 
+            shadow=True,
+            #fancybox=False, shadow=False,
+            fontsize=legFont
             #fontsize=15
             )
+
+    leg.get_frame().set_alpha(0.5)
+    leg.get_frame().set_linewidth(0.5)
+    leg.get_frame().set_edgecolor("k")
 
     
     #
@@ -362,7 +375,7 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows):
 
     # bold the axis line
     for axis in ['top','bottom','left','right']:
-        ax.spines[axis].set_linewidth(2)
+        ax.spines[axis].set_linewidth(1.5)
         
 
     #--------------------------------------------------------------------------
@@ -372,18 +385,28 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows):
     #print ax.get_ylim()
     xMin, xMax = ax.get_xlim()
     print xMin, xMax
-    ax.set_xlim([xMin, xMax * 1.25])
+    ax.set_xlim([xMin, xMax * 1.40])
     
     yMin, yMax = ax.get_ylim()
     print yMin, yMax
-    ax.set_ylim([yMin, yMax * 1.35])
+    ax.set_ylim([yMin, yMax * 1.45])
 
     # remove ticks
     plt.xticks([])
     plt.yticks([])
 
 
+    aspectratio=0.68
+    ratio_default=(ax.get_xlim()[1]-ax.get_xlim()[0])/(ax.get_ylim()[1]-ax.get_ylim()[0])
+    ax.set_aspect(ratio_default*aspectratio)
+    
     
     plt.show()
 
-    fig.savefig('tsne.png',  dpi=500, transparent = True, bbox_inches='tight')
+    if figname == None:
+        fig.savefig('tsne.png', dpi=300, transparent = True, bbox_inches='tight')
+        fig.savefig('tsne.pdf', transparent = True, bbox_inches='tight')
+    else:
+        fig.savefig(figname + '.pdf',  transparent = True, bbox_inches='tight')
+        fig.savefig(figname + '.png',  dpi=300, transparent = True, bbox_inches='tight')
+        

@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/vectorAdd_bs128.dir/vectorAdd_bs128_generated_vectorAdd_bs128.cu.o  -o vectorAdd_bs128  -L/usr/local/cuda/lib64 -rdynamic /usr/local/cuda/lib64/libcudart_static.a -lpthread -ldl -lrt -lcudart -Wl,-rpath,/usr/local/cuda/lib64 

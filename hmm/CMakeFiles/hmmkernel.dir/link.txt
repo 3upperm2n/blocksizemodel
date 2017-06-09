@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhmmkernel.a  CMakeFiles/hmmkernel.dir/hmmkernel_generated_kernel_forward.cu.o CMakeFiles/hmmkernel.dir/hmmkernel_generated_kernel_backward.cu.o CMakeFiles/hmmkernel.dir/hmmkernel_generated_kernel_bw.cu.o CMakeFiles/hmmkernel.dir/hmmkernel_intermediate_link.o
+/usr/bin/ranlib libhmmkernel.a
