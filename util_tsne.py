@@ -293,7 +293,7 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows, figname=None, kernelname=Non
               marker=(5, 1)) 
 
     if kernelname <> None:
-        ax.text(X_tsne_2d[-1,0]-30, X_tsne_2d[-1,1]-50,
+        ax.text(X_tsne_2d[-1,0]-50, X_tsne_2d[-1,1]-40,
                 '%s' % (str(kernelname)), size=txtFont, zorder=2, color='k')
 
 
@@ -305,13 +305,13 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows, figname=None, kernelname=Non
             b32 = ax.scatter(x_bs32, y_bs32, c=data_color, s=area,  alpha=0.5, label="bs-32")
         elif key == 'bs-64':
             data_color = 'g'; sym = (5, 0);
-            b64 = ax.scatter(x_bs64, y_bs64, c=data_color, s=area, alpha=0.5, label="bs-64")
+            b64 = ax.scatter(x_bs64, y_bs64, c=data_color, s=area, alpha=0.5, label="bs-64", hatch='***')
         elif key == 'bs-128':
             data_color = 'r'; sym = (5, 1);
-            b128 = ax.scatter(x_bs128, y_bs128, c=data_color, s=area, alpha=0.5, label="bs-128")
+            b128 = ax.scatter(x_bs128, y_bs128, c=data_color, s=area, alpha=0.5, label="bs-128", hatch='///')
         elif key == 'bs-256':
             data_color = 'c'; sym = (5, 2);
-            b256 = ax.scatter(x_bs256, y_bs256, c=data_color, s=area, alpha=0.5, label="bs-256")
+            b256 = ax.scatter(x_bs256, y_bs256, c=data_color, s=area, alpha=0.5, label="bs-256", hatch='xxx')
         elif key == 'bs-512':
             data_color = 'm'; sym = 'o';
             b512= ax.scatter(x_bs512, y_bs512, c=data_color, s=area, alpha=0.5, label="bs-512")
@@ -344,14 +344,14 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows, figname=None, kernelname=Non
             bbox_to_anchor=(0., 0.95, 1., 0.05),
             #bbox_to_anchor=(0., 1.02, 1., 0.04),
             #fancybox=True, 
-            shadow=True,
+            #shadow=True,
             #fancybox=False, shadow=False,
             fontsize=legFont
             #fontsize=15
             )
 
-    leg.get_frame().set_alpha(0.5)
-    leg.get_frame().set_linewidth(0.5)
+    leg.get_frame().set_alpha(1)
+    leg.get_frame().set_linewidth(1.0)
     leg.get_frame().set_edgecolor("k")
 
     
@@ -404,9 +404,9 @@ def plot_tsne_2d_v1(X_tsne_2d, y, y_name, top3rows, figname=None, kernelname=Non
     plt.show()
 
     if figname == None:
-        fig.savefig('tsne.png', dpi=300, transparent = True, bbox_inches='tight')
+        #fig.savefig('tsne.png', dpi=300, transparent = True, bbox_inches='tight')
         fig.savefig('tsne.pdf', transparent = True, bbox_inches='tight')
     else:
         fig.savefig(figname + '.pdf',  transparent = True, bbox_inches='tight')
-        fig.savefig(figname + '.png',  dpi=300, transparent = True, bbox_inches='tight')
+        #fig.savefig(figname + '.png',  dpi=300, transparent = True, bbox_inches='tight')
         
